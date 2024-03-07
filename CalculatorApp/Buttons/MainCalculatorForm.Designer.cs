@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             gpbCalcMain = new GroupBox();
+            btnDelete = new Button();
             btnDecimal = new Button();
             btnEquals = new Button();
             btnPi = new Button();
             btnSquared = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnDivide = new Button();
+            buttonMultiply = new Button();
             btnMinus = new Button();
             btnAdd = new Button();
             btnZero = new Button();
@@ -51,7 +52,6 @@
             btnAC = new Button();
             btnCalcOnOff = new Button();
             richTextBox1 = new RichTextBox();
-            btnDelete = new Button();
             gpbCalcMain.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,8 +62,8 @@
             gpbCalcMain.Controls.Add(btnEquals);
             gpbCalcMain.Controls.Add(btnPi);
             gpbCalcMain.Controls.Add(btnSquared);
-            gpbCalcMain.Controls.Add(button2);
-            gpbCalcMain.Controls.Add(button1);
+            gpbCalcMain.Controls.Add(btnDivide);
+            gpbCalcMain.Controls.Add(buttonMultiply);
             gpbCalcMain.Controls.Add(btnMinus);
             gpbCalcMain.Controls.Add(btnAdd);
             gpbCalcMain.Controls.Add(btnZero);
@@ -87,6 +87,20 @@
             gpbCalcMain.TabIndex = 0;
             gpbCalcMain.TabStop = false;
             gpbCalcMain.Text = "Calculator ";
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(255, 128, 0);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.FloralWhite;
+            btnDelete.Location = new Point(407, 513);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(151, 101);
+            btnDelete.TabIndex = 21;
+            btnDelete.Text = "DEL";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnDecimal
             // 
@@ -143,30 +157,32 @@
             btnSquared.Text = "^2";
             btnSquared.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnDivide
             // 
-            button2.BackColor = Color.SeaGreen;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(605, 130);
-            button2.Name = "button2";
-            button2.Size = new Size(180, 112);
-            button2.TabIndex = 16;
-            button2.Text = "+";
-            button2.UseVisualStyleBackColor = false;
+            btnDivide.BackColor = Color.SeaGreen;
+            btnDivide.FlatStyle = FlatStyle.Flat;
+            btnDivide.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDivide.Location = new Point(605, 130);
+            btnDivide.Name = "btnDivide";
+            btnDivide.Size = new Size(180, 112);
+            btnDivide.TabIndex = 16;
+            btnDivide.Text = "÷";
+            btnDivide.UseVisualStyleBackColor = false;
+            btnDivide.Click += btnDivide_Click;
             // 
-            // button1
+            // buttonMultiply
             // 
-            button1.BackColor = Color.SeaGreen;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Bahnschrift", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(605, 254);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 112);
-            button1.TabIndex = 15;
-            button1.UseVisualStyleBackColor = false;
+            buttonMultiply.BackColor = Color.SeaGreen;
+            buttonMultiply.FlatStyle = FlatStyle.Flat;
+            buttonMultiply.Font = new Font("Bahnschrift", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonMultiply.ForeColor = SystemColors.ButtonHighlight;
+            buttonMultiply.Image = (Image)resources.GetObject("buttonMultiply.Image");
+            buttonMultiply.Location = new Point(605, 254);
+            buttonMultiply.Name = "buttonMultiply";
+            buttonMultiply.Size = new Size(180, 112);
+            buttonMultiply.TabIndex = 15;
+            buttonMultiply.UseVisualStyleBackColor = false;
+            buttonMultiply.Click += buttonMultiply_Click;
             // 
             // btnMinus
             // 
@@ -179,6 +195,7 @@
             btnMinus.TabIndex = 14;
             btnMinus.Text = "-";
             btnMinus.UseVisualStyleBackColor = false;
+            btnMinus.Click += btnMinus_Click;
             // 
             // btnAdd
             // 
@@ -191,6 +208,7 @@
             btnAdd.TabIndex = 13;
             btnAdd.Text = "+";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnZero
             // 
@@ -204,7 +222,7 @@
             btnZero.TabIndex = 12;
             btnZero.Text = "0";
             btnZero.UseVisualStyleBackColor = false;
-            btnZero.Click += (sender, e) => NumberButtonClick(btnZero, e);
+            btnZero.Click += btnZero_Click;
             // 
             // btnThree
             // 
@@ -218,7 +236,7 @@
             btnThree.TabIndex = 11;
             btnThree.Text = "3";
             btnThree.UseVisualStyleBackColor = false;
-            btnThree.Click += (sender, e) => NumberButtonClick(btnThree, e);
+            btnThree.Click += btnThree_Click;
             // 
             // btnTwo
             // 
@@ -232,7 +250,7 @@
             btnTwo.TabIndex = 10;
             btnTwo.Text = "2";
             btnTwo.UseVisualStyleBackColor = false;
-            btnTwo.Click += (sender, e) => NumberButtonClick(btnTwo, e);
+            btnTwo.Click += btnTwo_Click;
             // 
             // btnOne
             // 
@@ -246,7 +264,7 @@
             btnOne.TabIndex = 9;
             btnOne.Text = "1";
             btnOne.UseVisualStyleBackColor = false;
-            btnOne.Click += (sender, e) => NumberButtonClick(btnOne, e);
+            btnOne.Click += btnOne_Click;
             // 
             // btnSix
             // 
@@ -260,7 +278,7 @@
             btnSix.TabIndex = 8;
             btnSix.Text = "6";
             btnSix.UseVisualStyleBackColor = false;
-            btnSix.Click += (sender, e) => NumberButtonClick(btnSix, e);
+            btnSix.Click += btnSix_Click;
             // 
             // btnFive
             // 
@@ -274,7 +292,7 @@
             btnFive.TabIndex = 7;
             btnFive.Text = "5";
             btnFive.UseVisualStyleBackColor = false;
-            btnFive.Click += (sender, e) => NumberButtonClick(btnFive, e);
+            btnFive.Click += btnFive_Click;
             // 
             // btnFour
             // 
@@ -288,7 +306,7 @@
             btnFour.TabIndex = 6;
             btnFour.Text = "4";
             btnFour.UseVisualStyleBackColor = false;
-            btnFour.Click += (sender, e) => NumberButtonClick(btnFour, e);
+            btnFour.Click += btnFour_Click;
             // 
             // btnNine
             // 
@@ -302,7 +320,7 @@
             btnNine.TabIndex = 5;
             btnNine.Text = "9";
             btnNine.UseVisualStyleBackColor = false;
-            btnNine.Click += (sender, e) => NumberButtonClick(btnNine, e);
+            btnNine.Click += btnNine_Click;
             // 
             // btnEight
             // 
@@ -316,7 +334,7 @@
             btnEight.TabIndex = 4;
             btnEight.Text = "8";
             btnEight.UseVisualStyleBackColor = false;
-            btnEight.Click += (sender, e) => NumberButtonClick(btnEight, e);
+            btnEight.Click += btnEight_Click;
             // 
             // btnSeven
             // 
@@ -330,7 +348,7 @@
             btnSeven.TabIndex = 3;
             btnSeven.Text = "7";
             btnSeven.UseVisualStyleBackColor = false;
-            btnSeven.Click += (sender, e) => NumberButtonClick(btnSeven, e);
+            btnSeven.Click += btnSeven_Click;
             // 
             // btnAC
             // 
@@ -369,20 +387,6 @@
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.FromArgb(255, 128, 0);
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDelete.ForeColor = Color.FloralWhite;
-            btnDelete.Location = new Point(407, 513);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(151, 101);
-            btnDelete.TabIndex = 21;
-            btnDelete.Text = "DEL";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -414,8 +418,8 @@
         private Button btnEight;
         private Button btnMinus;
         private Button btnAdd;
-        private Button button2;
-        private Button button1;
+        private Button btnDivide;
+        private Button buttonMultiply;
         private Button btnPi;
         private Button btnSquared;
         private Button btnEquals;
