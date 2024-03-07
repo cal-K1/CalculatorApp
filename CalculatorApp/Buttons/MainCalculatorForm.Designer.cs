@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             gpbCalcMain = new GroupBox();
+            btnDecimal = new Button();
+            btnEquals = new Button();
+            btnPi = new Button();
+            btnSquared = new Button();
             button2 = new Button();
             button1 = new Button();
             btnMinus = new Button();
@@ -47,14 +51,14 @@
             btnAC = new Button();
             btnCalcOnOff = new Button();
             richTextBox1 = new RichTextBox();
-            btnSquared = new Button();
-            btnPi = new Button();
-            btnEquals = new Button();
+            btnDelete = new Button();
             gpbCalcMain.SuspendLayout();
             SuspendLayout();
             // 
             // gpbCalcMain
             // 
+            gpbCalcMain.Controls.Add(btnDelete);
+            gpbCalcMain.Controls.Add(btnDecimal);
             gpbCalcMain.Controls.Add(btnEquals);
             gpbCalcMain.Controls.Add(btnPi);
             gpbCalcMain.Controls.Add(btnSquared);
@@ -83,6 +87,61 @@
             gpbCalcMain.TabIndex = 0;
             gpbCalcMain.TabStop = false;
             gpbCalcMain.Text = "Calculator ";
+            // 
+            // btnDecimal
+            // 
+            btnDecimal.BackColor = Color.DarkCyan;
+            btnDecimal.FlatStyle = FlatStyle.Flat;
+            btnDecimal.Font = new Font("Arial", 48F);
+            btnDecimal.ForeColor = Color.FloralWhite;
+            btnDecimal.Location = new Point(31, 513);
+            btnDecimal.Name = "btnDecimal";
+            btnDecimal.Size = new Size(151, 101);
+            btnDecimal.TabIndex = 20;
+            btnDecimal.Text = ".";
+            btnDecimal.UseVisualStyleBackColor = false;
+            btnDecimal.Click += btnDecimal_Click;
+            // 
+            // btnEquals
+            // 
+            btnEquals.BackColor = Color.Gold;
+            btnEquals.DialogResult = DialogResult.OK;
+            btnEquals.FlatStyle = FlatStyle.Flat;
+            btnEquals.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEquals.ForeColor = SystemColors.ButtonFace;
+            btnEquals.Location = new Point(811, 488);
+            btnEquals.Name = "btnEquals";
+            btnEquals.Size = new Size(242, 126);
+            btnEquals.TabIndex = 19;
+            btnEquals.Text = "=";
+            btnEquals.UseVisualStyleBackColor = false;
+            // 
+            // btnPi
+            // 
+            btnPi.BackColor = Color.CadetBlue;
+            btnPi.FlatStyle = FlatStyle.Flat;
+            btnPi.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPi.ForeColor = SystemColors.ButtonFace;
+            btnPi.Location = new Point(849, 363);
+            btnPi.Name = "btnPi";
+            btnPi.Size = new Size(174, 103);
+            btnPi.TabIndex = 18;
+            btnPi.Text = "π";
+            btnPi.UseVisualStyleBackColor = false;
+            btnPi.Click += btnPi_Click;
+            // 
+            // btnSquared
+            // 
+            btnSquared.BackColor = Color.CadetBlue;
+            btnSquared.FlatStyle = FlatStyle.Flat;
+            btnSquared.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSquared.ForeColor = SystemColors.ButtonFace;
+            btnSquared.Location = new Point(849, 241);
+            btnSquared.Name = "btnSquared";
+            btnSquared.Size = new Size(174, 103);
+            btnSquared.TabIndex = 17;
+            btnSquared.Text = "^2";
+            btnSquared.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -145,6 +204,7 @@
             btnZero.TabIndex = 12;
             btnZero.Text = "0";
             btnZero.UseVisualStyleBackColor = false;
+            btnZero.Click += btnZero_Click;
             // 
             // btnThree
             // 
@@ -158,6 +218,7 @@
             btnThree.TabIndex = 11;
             btnThree.Text = "3";
             btnThree.UseVisualStyleBackColor = false;
+            btnThree.Click += btnThree_Click;
             // 
             // btnTwo
             // 
@@ -171,6 +232,7 @@
             btnTwo.TabIndex = 10;
             btnTwo.Text = "2";
             btnTwo.UseVisualStyleBackColor = false;
+            btnTwo.Click += btnTwo_Click;
             // 
             // btnOne
             // 
@@ -184,6 +246,7 @@
             btnOne.TabIndex = 9;
             btnOne.Text = "1";
             btnOne.UseVisualStyleBackColor = false;
+            btnOne.Click += btnOne_Click;
             // 
             // btnSix
             // 
@@ -197,6 +260,7 @@
             btnSix.TabIndex = 8;
             btnSix.Text = "6";
             btnSix.UseVisualStyleBackColor = false;
+            btnSix.Click += btnSix_Click;
             // 
             // btnFive
             // 
@@ -210,6 +274,7 @@
             btnFive.TabIndex = 7;
             btnFive.Text = "5";
             btnFive.UseVisualStyleBackColor = false;
+            btnFive.Click += btnFive_Click;
             // 
             // btnFour
             // 
@@ -223,6 +288,7 @@
             btnFour.TabIndex = 6;
             btnFour.Text = "4";
             btnFour.UseVisualStyleBackColor = false;
+            btnFour.Click += btnFour_Click;
             // 
             // btnNine
             // 
@@ -236,6 +302,7 @@
             btnNine.TabIndex = 5;
             btnNine.Text = "9";
             btnNine.UseVisualStyleBackColor = false;
+            btnNine.Click += btnNine_Click;
             // 
             // btnEight
             // 
@@ -249,6 +316,7 @@
             btnEight.TabIndex = 4;
             btnEight.Text = "8";
             btnEight.UseVisualStyleBackColor = false;
+            btnEight.Click += btnEight_Click;
             // 
             // btnSeven
             // 
@@ -262,6 +330,7 @@
             btnSeven.TabIndex = 3;
             btnSeven.Text = "7";
             btnSeven.UseVisualStyleBackColor = false;
+            btnSeven.Click += btnSeven_Click;
             // 
             // btnAC
             // 
@@ -276,6 +345,7 @@
             btnAC.TabIndex = 2;
             btnAC.Text = "AC";
             btnAC.UseVisualStyleBackColor = false;
+            btnAC.Click += btnAC_Click;
             // 
             // btnCalcOnOff
             // 
@@ -292,51 +362,26 @@
             // 
             // richTextBox1
             // 
+            richTextBox1.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             richTextBox1.Location = new Point(113, 25);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(751, 72);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             // 
-            // btnSquared
+            // btnDelete
             // 
-            btnSquared.BackColor = Color.CadetBlue;
-            btnSquared.FlatStyle = FlatStyle.Flat;
-            btnSquared.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSquared.ForeColor = SystemColors.ButtonFace;
-            btnSquared.Location = new Point(849, 241);
-            btnSquared.Name = "btnSquared";
-            btnSquared.Size = new Size(174, 103);
-            btnSquared.TabIndex = 17;
-            btnSquared.Text = "^2";
-            btnSquared.UseVisualStyleBackColor = false;
-            // 
-            // btnPi
-            // 
-            btnPi.BackColor = Color.CadetBlue;
-            btnPi.FlatStyle = FlatStyle.Flat;
-            btnPi.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPi.ForeColor = SystemColors.ButtonFace;
-            btnPi.Location = new Point(849, 363);
-            btnPi.Name = "btnPi";
-            btnPi.Size = new Size(174, 103);
-            btnPi.TabIndex = 18;
-            btnPi.Text = "π";
-            btnPi.UseVisualStyleBackColor = false;
-            // 
-            // btnEquals
-            // 
-            btnEquals.BackColor = Color.Gold;
-            btnEquals.DialogResult = DialogResult.OK;
-            btnEquals.FlatStyle = FlatStyle.Flat;
-            btnEquals.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEquals.ForeColor = SystemColors.ButtonFace;
-            btnEquals.Location = new Point(811, 488);
-            btnEquals.Name = "btnEquals";
-            btnEquals.Size = new Size(242, 126);
-            btnEquals.TabIndex = 19;
-            btnEquals.Text = "=";
-            btnEquals.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = Color.FromArgb(255, 128, 0);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.FloralWhite;
+            btnDelete.Location = new Point(407, 513);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(151, 101);
+            btnDelete.TabIndex = 21;
+            btnDelete.Text = "DEL";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
@@ -345,8 +390,8 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1095, 652);
             Controls.Add(gpbCalcMain);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "Form1";
-            Text = "Form1";
             gpbCalcMain.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -374,5 +419,7 @@
         private Button btnPi;
         private Button btnSquared;
         private Button btnEquals;
+        private Button btnDecimal;
+        private Button btnDelete;
     }
 }
