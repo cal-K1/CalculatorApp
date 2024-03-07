@@ -7,54 +7,10 @@
             InitializeComponent();
         }
 
-        private void btnSeven_Click(object sender, EventArgs e)
+        public void NumberButtonClick(Button sender, EventArgs e)
         {
-            richTextBox1.Text += "7";
-        }
-
-        private void btnEight_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "8";
-        }
-
-        private void btnNine_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "9";
-        }
-
-        private void btnFour_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "4";
-        }
-
-        private void btnFive_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "5";
-        }
-
-        private void btnSix_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "6";
-        }
-
-        private void btnOne_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "1";
-        }
-
-        private void btnTwo_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "2";
-        }
-
-        private void btnThree_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "3";
-        }
-
-        private void btnZero_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text += "0";
+            Button button = (Button)sender;
+            richTextBox1.Text += button.Text;
         }
 
         private void btnAC_Click(object sender, EventArgs e)

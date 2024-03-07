@@ -204,7 +204,7 @@
             btnZero.TabIndex = 12;
             btnZero.Text = "0";
             btnZero.UseVisualStyleBackColor = false;
-            btnZero.Click += btnZero_Click;
+            btnZero.Click += (sender, e) => NumberButtonClick(btnZero, e);
             // 
             // btnThree
             // 
@@ -218,7 +218,7 @@
             btnThree.TabIndex = 11;
             btnThree.Text = "3";
             btnThree.UseVisualStyleBackColor = false;
-            btnThree.Click += btnThree_Click;
+            btnThree.Click += (sender, e) => NumberButtonClick(btnThree, e);
             // 
             // btnTwo
             // 
@@ -232,7 +232,7 @@
             btnTwo.TabIndex = 10;
             btnTwo.Text = "2";
             btnTwo.UseVisualStyleBackColor = false;
-            btnTwo.Click += btnTwo_Click;
+            btnTwo.Click += (sender, e) => NumberButtonClick(btnTwo, e);
             // 
             // btnOne
             // 
@@ -246,7 +246,7 @@
             btnOne.TabIndex = 9;
             btnOne.Text = "1";
             btnOne.UseVisualStyleBackColor = false;
-            btnOne.Click += btnOne_Click;
+            btnOne.Click += (sender, e) => NumberButtonClick(btnOne, e);
             // 
             // btnSix
             // 
@@ -260,7 +260,7 @@
             btnSix.TabIndex = 8;
             btnSix.Text = "6";
             btnSix.UseVisualStyleBackColor = false;
-            btnSix.Click += btnSix_Click;
+            btnSix.Click += (sender, e) => NumberButtonClick(btnSix, e);
             // 
             // btnFive
             // 
@@ -274,7 +274,7 @@
             btnFive.TabIndex = 7;
             btnFive.Text = "5";
             btnFive.UseVisualStyleBackColor = false;
-            btnFive.Click += btnFive_Click;
+            btnFive.Click += (sender, e) => NumberButtonClick(btnFive, e);
             // 
             // btnFour
             // 
@@ -288,7 +288,7 @@
             btnFour.TabIndex = 6;
             btnFour.Text = "4";
             btnFour.UseVisualStyleBackColor = false;
-            btnFour.Click += btnFour_Click;
+            btnFour.Click += (sender, e) => NumberButtonClick(btnFour, e);
             // 
             // btnNine
             // 
@@ -302,7 +302,7 @@
             btnNine.TabIndex = 5;
             btnNine.Text = "9";
             btnNine.UseVisualStyleBackColor = false;
-            btnNine.Click += btnNine_Click;
+            btnNine.Click += (sender, e) => NumberButtonClick(btnNine, e);
             // 
             // btnEight
             // 
@@ -316,7 +316,7 @@
             btnEight.TabIndex = 4;
             btnEight.Text = "8";
             btnEight.UseVisualStyleBackColor = false;
-            btnEight.Click += btnEight_Click;
+            btnEight.Click += (sender, e) => NumberButtonClick(btnEight, e);
             // 
             // btnSeven
             // 
@@ -330,7 +330,7 @@
             btnSeven.TabIndex = 3;
             btnSeven.Text = "7";
             btnSeven.UseVisualStyleBackColor = false;
-            btnSeven.Click += btnSeven_Click;
+            btnSeven.Click += (sender, e) => NumberButtonClick(btnSeven, e);
             // 
             // btnAC
             // 
