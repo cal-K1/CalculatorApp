@@ -129,6 +129,7 @@
             btnEquals.TabIndex = 19;
             btnEquals.Text = "=";
             btnEquals.UseVisualStyleBackColor = false;
+            btnEquals.Click += btnEquals_Click;
             // 
             // btnPi
             // 
