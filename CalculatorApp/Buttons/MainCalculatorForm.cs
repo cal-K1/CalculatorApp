@@ -94,5 +94,17 @@
         {
             richTextBox1.Text += "²";
         }
+
+        private void btnCalcOnOff_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is Button button && button != btnCalcOnOff)
+                {
+                    button.Enabled = false;
+                }
+            }
+        }
+
     }
 }

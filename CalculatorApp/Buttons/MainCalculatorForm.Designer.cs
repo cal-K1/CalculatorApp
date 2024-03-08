@@ -378,6 +378,7 @@
             btnCalcOnOff.Size = new Size(125, 90);
             btnCalcOnOff.TabIndex = 1;
             btnCalcOnOff.UseVisualStyleBackColor = false;
+            btnCalcOnOff.Click += btnCalcOnOff_Click;
             // 
             // richTextBox1
             // 
