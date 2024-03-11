@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using CalculatorApp.Properties;
+using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -37,7 +38,8 @@ namespace CalculatorApp
         }
 
         private void btnAC_Click(object sender, EventArgs e)
-        { 
+        {
+            richTextBox1.Text = string.Empty;
             btnDecimal.Enabled = true;
         }
 
@@ -108,10 +110,12 @@ namespace CalculatorApp
                     if (onOffClicks % 2 == 0)
                     {
                         button.Enabled = false;
+                        buttonMultiply.Image = Properties.Resources.DisabledMultiplication;
                     }
                     else
                     {
                         button.Enabled = true;
+                        buttonMultiply.Image = Properties.Resources.EnabledMultiplication;
                     }
                 }
                 else return;

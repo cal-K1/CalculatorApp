@@ -63,9 +63,9 @@ namespace CalculatorApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OIP {
+        internal static System.Drawing.Bitmap DisabledMultiplication {
             get {
-                object obj = ResourceManager.GetObject("OIP", resourceCulture);
+                object obj = ResourceManager.GetObject("DisabledMultiplication", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CalculatorApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Screenshot_2024_03_07_123027_removebg_preview {
+        internal static System.Drawing.Bitmap EnabledMultiplication {
             get {
-                object obj = ResourceManager.GetObject("Screenshot_2024-03-07_123027-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("EnabledMultiplication", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
