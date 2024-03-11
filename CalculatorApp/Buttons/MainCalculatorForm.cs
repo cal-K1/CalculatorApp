@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CalculatorApp
 {
@@ -123,8 +124,8 @@ namespace CalculatorApp
         {
             string expression = richTextBox1.Text;
 
-            // Split the expression into tokens using the operators as delimiters
-            string[] tokens = expression.Split(new char[] { '+', '-', '*', '/' });
+            // Split the expression into numbers and operators
+            string[] tokens = Regex.Split(expression, @"([-+*/])");
 
             // Define an empty list to store numbers
             List<double> numbers = new List<double>();
@@ -153,27 +154,45 @@ namespace CalculatorApp
             // Iterate through the operators and perform the corresponding operation with the next number
             for (int i = 0; i < operators.Count; i++)
             {
-                switch (operators[i])
+                // Check if there are enough numbers to perform the operation
+                if (i + 1 < numbers.Count)
                 {
-                    case '+':
-                        result += numbers[i + 1];
-                        break;
-                    case '-':
-                        result -= numbers[i + 1];
-                        break;
-                    case '*':
-                        result *= numbers[i + 1];
-                        break;
-                    case '/':
-                        result /= numbers[i + 1];
-                        break;
+                    switch (operators[i])
+                    {
+                        case '*':
+                            // Handle multiplication
+                            result *= numbers[i + 1];
+                            break;
+                        case '/':
+                            // Handle division
+                            if (numbers[i + 1] != 0)
+                                result /= numbers[i + 1];
+                            else
+                            {
+                                richTextBox1.Text = "Error: Division by zero";
+                                return;
+                            }
+                            break; 
+                            // Handle addition
+                            result += numbers[i + 1];
+                            break;
+                        case '-':
+                            // Handle subtraction
+                            result -= numbers[i + 1];
+                            break;
+                    }
+                }
+                else
+                {
+                    // Handle the case where there are not enough numbers
+                    richTextBox1.Text = "Error: Invalid expression";
+                    return;
                 }
             }
 
             // Display the result
             richTextBox1.Text = result.ToString();
         }
-
     }
 }
 
