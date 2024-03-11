@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Data;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace CalculatorApp
@@ -18,10 +19,8 @@ namespace CalculatorApp
             // Iterate through all controls in the form
             foreach (Control control in Controls)
             {
-                // Check if the control is a Button
                 if (control is Button button)
                 {
-                    // Check if the button's Text represents a number
                     if (int.TryParse(button.Text, out int number))
                     {
                         // Assign the same event handler to each number button's Click event
@@ -33,13 +32,12 @@ namespace CalculatorApp
 
         private void NumberButton_Click(object sender, EventArgs e)
         {
-            // Append the number represented by the button's Text to the richTextBox
+            // Append the number represented by the button's Text to the textbox
             richTextBox1.Text += ((Button)sender).Text;
         }
 
         private void btnAC_Click(object sender, EventArgs e)
-        {
-            richTextBox1.Text = string.Empty;
+        { 
             btnDecimal.Enabled = true;
         }
 
@@ -103,7 +101,7 @@ namespace CalculatorApp
         private void btnCalcOnOff_Click(object sender, EventArgs e)
         {
             onOffClicks++;
-            foreach (Control gpbCalcMain in gpbCalcMain.Controls) // Replace groupBox1 with the name of your GroupBox
+            foreach (Control gpbCalcMain in gpbCalcMain.Controls)
             {
                 if (gpbCalcMain is Button button && button != btnCalcOnOff)
                 {
@@ -122,77 +120,19 @@ namespace CalculatorApp
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            string expression = richTextBox1.Text;
+            string formattedCalculation = richTextBox1.Text.Replace("X", "*").ToString().Replace("÷", "/").Replace("π","3.14159265358979");
 
-            // Split the expression into numbers and operators
-            string[] tokens = Regex.Split(expression, @"([-+*/])");
-
-            // Define an empty list to store numbers
-            List<double> numbers = new List<double>();
-
-            // Define an empty list to store operators
-            List<char> operators = new List<char>();
-
-            // Parse each token and categorize them as numbers or operators
-            foreach (string token in tokens)
+            try
             {
-                double number;
-                if (double.TryParse(token, out number))
-                {
-                    numbers.Add(number);
-                }
-                else if (!string.IsNullOrWhiteSpace(token))
-                {
-                    // Assuming the token is an operator
-                    operators.Add(token[0]);
-                }
+                richTextBox1.Text = new DataTable().Compute(formattedCalculation, null).ToString();
             }
-
-            // Initialize the result with the first number
-            double result = numbers[0];
-
-            // Iterate through the operators and perform the corresponding operation with the next number
-            for (int i = 0; i < operators.Count; i++)
+            catch (Exception ex)
             {
-                // Check if there are enough numbers to perform the operation
-                if (i + 1 < numbers.Count)
-                {
-                    switch (operators[i])
-                    {
-                        case '*':
-                            // Handle multiplication
-                            result *= numbers[i + 1];
-                            break;
-                        case '/':
-                            // Handle division
-                            if (numbers[i + 1] != 0)
-                                result /= numbers[i + 1];
-                            else
-                            {
-                                richTextBox1.Text = "Error: Division by zero";
-                                return;
-                            }
-                            break; 
-                            // Handle addition
-                            result += numbers[i + 1];
-                            break;
-                        case '-':
-                            // Handle subtraction
-                            result -= numbers[i + 1];
-                            break;
-                    }
-                }
-                else
-                {
-                    // Handle the case where there are not enough numbers
-                    richTextBox1.Text = "Error: Invalid expression";
-                    return;
-                }
+                richTextBox1.Text = "0";
             }
-
-            // Display the result
-            richTextBox1.Text = result.ToString();
         }
+
     }
 }
+
 
