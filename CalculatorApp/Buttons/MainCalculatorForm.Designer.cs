@@ -176,13 +176,13 @@
             // 
             buttonMultiply.BackColor = Color.SeaGreen;
             buttonMultiply.FlatStyle = FlatStyle.Flat;
-            buttonMultiply.Font = new Font("Bahnschrift", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonMultiply.Font = new Font("Corbel", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonMultiply.ForeColor = SystemColors.ButtonHighlight;
-            buttonMultiply.Image = (Image)resources.GetObject("buttonMultiply.Image");
             buttonMultiply.Location = new Point(605, 254);
             buttonMultiply.Name = "buttonMultiply";
             buttonMultiply.Size = new Size(180, 112);
             buttonMultiply.TabIndex = 15;
+            buttonMultiply.Text = "x";
             buttonMultiply.UseVisualStyleBackColor = false;
             buttonMultiply.Click += buttonMultiply_Click;
             // 

@@ -63,9 +63,9 @@ namespace CalculatorApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DisabledMultiplictionImg {
+        internal static System.Drawing.Bitmap EnabledMultiplication {
             get {
-                object obj = ResourceManager.GetObject("DisabledMultiplictionImg", resourceCulture);
+                object obj = ResourceManager.GetObject("EnabledMultiplication", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace CalculatorApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EnabledMultiplication {
+        internal static System.Drawing.Bitmap MultiDisabled {
             get {
-                object obj = ResourceManager.GetObject("EnabledMultiplication", resourceCulture);
+                object obj = ResourceManager.GetObject("MultiDisabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

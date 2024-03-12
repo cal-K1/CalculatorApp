@@ -110,12 +110,10 @@ namespace CalculatorApp
                     if (onOffClicks % 2 == 0)
                     {
                         button.Enabled = false;
-                        buttonMultiply.Image = Properties.Resources.DisabledMultiplictionImg;
                     }
                     else
                     {
                         button.Enabled = true;
-                        buttonMultiply.Image = Properties.Resources.EnabledMultiplication;
                     }
                 }
                 else return;
