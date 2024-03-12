@@ -124,15 +124,27 @@ namespace CalculatorApp
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            string formattedCalculation = richTextBox1.Text.Replace("X", "*").ToString().Replace("÷", "/").Replace("π","3.14159265358979");
+            string formattedCalculation = richTextBox1.Text.Replace("X", "*").Replace("÷", "/").Replace("π", "3.14159265358979");
 
             try
             {
+                // Handle squared expressions
+                if (formattedCalculation.Contains("²"))
+                {
+                    // Extract the base number
+                    string baseNumberStr = Regex.Match(formattedCalculation, @"\d+").Value;
+                    double baseNumber = double.Parse(baseNumberStr);
+
+                    double result = Math.Pow(baseNumber, 2);
+
+                    formattedCalculation = formattedCalculation.Replace($"{baseNumberStr}²", result.ToString());
+                }
+
                 richTextBox1.Text = new DataTable().Compute(formattedCalculation, null).ToString();
             }
             catch (Exception ex)
             {
-                richTextBox1.Text = "0";
+                richTextBox1.Text = "Error";
             }
         }
 
