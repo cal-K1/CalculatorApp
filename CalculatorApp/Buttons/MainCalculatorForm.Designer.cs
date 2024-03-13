@@ -51,7 +51,7 @@
             btnSeven = new Button();
             btnAC = new Button();
             btnCalcOnOff = new Button();
-            richTextBox1 = new RichTextBox();
+            richTextBoxCalculatorDisplay = new RichTextBox();
             gpbCalcMain.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             gpbCalcMain.Controls.Add(btnSeven);
             gpbCalcMain.Controls.Add(btnAC);
             gpbCalcMain.Controls.Add(btnCalcOnOff);
-            gpbCalcMain.Controls.Add(richTextBox1);
+            gpbCalcMain.Controls.Add(richTextBoxCalculatorDisplay);
             gpbCalcMain.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             gpbCalcMain.ForeColor = SystemColors.ButtonHighlight;
             gpbCalcMain.Location = new Point(12, 12);
@@ -274,7 +274,7 @@
             btnSix.FlatStyle = FlatStyle.Flat;
             btnSix.Font = new Font("Arial", 48F);
             btnSix.ForeColor = Color.FloralWhite;
-            btnSix.Location = new Point(407, 265);
+            btnSix.Location = new Point(407, 260);
             btnSix.Name = "btnSix";
             btnSix.Size = new Size(151, 101);
             btnSix.TabIndex = 8;
@@ -381,14 +381,14 @@
             btnCalcOnOff.UseVisualStyleBackColor = false;
             btnCalcOnOff.Click += btnCalcOnOff_Click;
             // 
-            // richTextBox1
+            // richTextBoxCalculatorDisplay
             // 
-            richTextBox1.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(113, 25);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(751, 72);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            richTextBoxCalculatorDisplay.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBoxCalculatorDisplay.Location = new Point(113, 25);
+            richTextBoxCalculatorDisplay.Name = "richTextBoxCalculatorDisplay";
+            richTextBoxCalculatorDisplay.Size = new Size(751, 72);
+            richTextBoxCalculatorDisplay.TabIndex = 0;
+            richTextBoxCalculatorDisplay.Text = "";
             // 
             // Form1
             // 
@@ -406,7 +406,7 @@
         #endregion
 
         private GroupBox gpbCalcMain;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxCalculatorDisplay;
         private Button btnCalcOnOff;
         private Button btnAC;
         private Button btnSeven;

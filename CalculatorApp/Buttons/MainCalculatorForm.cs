@@ -7,7 +7,7 @@ namespace CalculatorApp
 {
     public partial class Form1 : Form
     {
-
+        bool wasLastClickEquals; 
         int onOffClicks = 0;
         public Form1()
         {
@@ -17,6 +17,7 @@ namespace CalculatorApp
 
         private void InitializeNumberButtons()
         {
+            WasLastClickEquals();
             // Iterate through all controls in the form
             foreach (Control control in Controls)
             {
@@ -26,6 +27,7 @@ namespace CalculatorApp
                     {
                         // Assign the same event handler to each number button's Click event
                         button.Click += NumberButton_Click;
+                        wasLastClickEquals = false;
                     }
                 }
             }
@@ -33,75 +35,107 @@ namespace CalculatorApp
 
         private void NumberButton_Click(object sender, EventArgs e)
         {
+            WasLastClickEquals();
+
             // Append the number represented by the button's Text to the textbox
-            richTextBox1.Text += ((Button)sender).Text;
+            richTextBoxCalculatorDisplay.Text += ((Button)sender).Text;
+            wasLastClickEquals = false;
         }
 
         private void btnAC_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = string.Empty;
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text = string.Empty;
             btnDecimal.Enabled = true;
+            wasLastClickEquals = false;
         }
 
         private void btnPi_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "π";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += "π";
+            wasLastClickEquals = false;
         }
 
         private void btnDecimal_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += ".";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += ".";
             btnDecimal.Enabled = false;
+            wasLastClickEquals = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Text.EndsWith("."))
+            WasLastClickEquals();
+
+            if (richTextBoxCalculatorDisplay.Text.EndsWith("."))
             {
                 btnDecimal.Enabled = true;
             }
 
             try
             {
-                richTextBox1.Text = richTextBox1.Text.Remove(richTextBox1.Text.Length - 1);
+                richTextBoxCalculatorDisplay.Text = richTextBoxCalculatorDisplay.Text.Remove(richTextBoxCalculatorDisplay.Text.Length - 1);
             }
             catch
             {
                 return;
             }
+            wasLastClickEquals = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "+";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += "+";
             btnDecimal.Enabled = true;
+            wasLastClickEquals = false;
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "-";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += "-";
             btnDecimal.Enabled = true;
+            wasLastClickEquals = false;
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "*";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += "*";
             btnDecimal.Enabled = true;
+            wasLastClickEquals = false;
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "÷";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += "÷";
             btnDecimal.Enabled = true;
+            wasLastClickEquals = false;
         }
 
         private void btnSquared_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text += "²";
+            WasLastClickEquals();
+
+            richTextBoxCalculatorDisplay.Text += "²";
+            wasLastClickEquals = false;
         }
 
         private void btnCalcOnOff_Click(object sender, EventArgs e)
         {
+            WasLastClickEquals();
+
             onOffClicks++;
             foreach (Control gpbCalcMain in gpbCalcMain.Controls)
             {
@@ -110,6 +144,7 @@ namespace CalculatorApp
                     if (onOffClicks % 2 == 0)
                     {
                         button.Enabled = false;
+                        richTextBoxCalculatorDisplay.Text = string.Empty;
                     }
                     else
                     {
@@ -118,11 +153,14 @@ namespace CalculatorApp
                 }
                 else return;
             }
+            wasLastClickEquals = false;
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            string formattedCalculation = richTextBox1.Text.Replace("X", "*").Replace("÷", "/").Replace("π", "3.14159265358979");
+            WasLastClickEquals();
+
+            string formattedCalculation = richTextBoxCalculatorDisplay.Text.Replace("X", "*").Replace("÷", "/").Replace("π", "3.14159265358979");
 
             try
             {
@@ -138,14 +176,22 @@ namespace CalculatorApp
                     formattedCalculation = formattedCalculation.Replace($"{baseNumberStr}²", result.ToString());
                 }
 
-                richTextBox1.Text = new DataTable().Compute(formattedCalculation, null).ToString();
+                richTextBoxCalculatorDisplay.Text = new DataTable().Compute(formattedCalculation, null).ToString();
             }
             catch (Exception ex)
             {
-                richTextBox1.Text = "Error";
+                richTextBoxCalculatorDisplay.Text = "Error";
             }
+            wasLastClickEquals = true;
         }
-
+        public void WasLastClickEquals()
+        {
+            if (wasLastClickEquals == true)
+            {
+                richTextBoxCalculatorDisplay.Text = string.Empty;
+            }
+            else return;
+        }
     }
 }
 
