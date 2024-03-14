@@ -1,4 +1,5 @@
-﻿using CalculatorApp.Properties;
+﻿using CalculatorApp.Helpers;
+using CalculatorApp.Properties;
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -160,30 +161,14 @@ namespace CalculatorApp
         {
             WasLastClickEquals();
 
-            string formattedCalculation = richTextBoxCalculatorDisplay.Text.Replace("X", "*").Replace("÷", "/").Replace("π", "3.14159265358979");
+            string formattedString = CalculatorHelper.FormatString(richTextBoxCalculatorDisplay.Text);
+            string result = CalculatorHelper.Calculate(formattedString);
 
-            try
-            {
-                // Handle squared expressions
-                if (formattedCalculation.Contains("²"))
-                {
-                    // Extract the base number
-                    string baseNumberStr = Regex.Match(formattedCalculation, @"\d+").Value;
-                    double baseNumber = double.Parse(baseNumberStr);
+            richTextBoxCalculatorDisplay.Text = result;
 
-                    double result = Math.Pow(baseNumber, 2);
-
-                    formattedCalculation = formattedCalculation.Replace($"{baseNumberStr}²", result.ToString());
-                }
-
-                richTextBoxCalculatorDisplay.Text = new DataTable().Compute(formattedCalculation, null).ToString();
-            }
-            catch (Exception ex)
-            {
-                richTextBoxCalculatorDisplay.Text = "Error";
-            }
             wasLastClickEquals = true;
         }
+
         public void WasLastClickEquals()
         {
             if (wasLastClickEquals == true)
