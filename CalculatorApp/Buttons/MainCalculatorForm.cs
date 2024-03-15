@@ -39,8 +39,11 @@ namespace CalculatorApp
             WasLastClickEquals();
 
             // Append the number represented by the button's Text to the textbox
-            richTextBoxCalculatorDisplay.Text += ((Button)sender).Text;
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += ((Button)sender).Text;
+                wasLastClickEquals = false;
+            }
         }
 
         private void btnAC_Click(object sender, EventArgs e)
@@ -56,17 +59,23 @@ namespace CalculatorApp
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += "π";
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += "π";
+                wasLastClickEquals = false;
+            }
         }
 
         private void btnDecimal_Click(object sender, EventArgs e)
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += ".";
-            btnDecimal.Enabled = false;
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += ".";
+                btnDecimal.Enabled = false;
+                wasLastClickEquals = false;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -93,44 +102,64 @@ namespace CalculatorApp
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += "+";
-            btnDecimal.Enabled = true;
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += "+";
+                btnDecimal.Enabled = true;
+                wasLastClickEquals = false;
+            }
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += "-";
-            btnDecimal.Enabled = true;
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += "-";
+                btnDecimal.Enabled = true;
+                wasLastClickEquals = false;
+            }
         }
 
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += "*";
-            btnDecimal.Enabled = true;
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += "*";
+                btnDecimal.Enabled = true;
+                wasLastClickEquals = false;
+            }
+            else
+            {
+                return;
+            }
+            
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += "÷";
-            btnDecimal.Enabled = true;
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += "÷";
+                btnDecimal.Enabled = true;
+                wasLastClickEquals = false;
+            }
         }
 
         private void btnSquared_Click(object sender, EventArgs e)
         {
             WasLastClickEquals();
 
-            richTextBoxCalculatorDisplay.Text += "²";
-            wasLastClickEquals = false;
+            if (richTextBoxCalculatorDisplay.Text.Length < 25)
+            {
+                richTextBoxCalculatorDisplay.Text += "²";
+                wasLastClickEquals = false;
+            }
         }
 
         private void btnCalcOnOff_Click(object sender, EventArgs e)
