@@ -15,7 +15,21 @@ namespace CalculatorApp.Helpers
             string formattedString = string.Empty;
             try
             {
-                formattedString = initialString.Replace("X", "*").Replace("÷", "/").Replace("π", "3.14159265358979");
+                formattedString = initialString.Replace("X", "*").Replace("÷", "/");
+
+                if (formattedString.Contains("π"))
+                {
+                    // Check if "π" is standalone or comes after a number
+                    int piIndex = formattedString.IndexOf("π");
+                    if (piIndex == 0 || !char.IsDigit(formattedString[piIndex - 1]))
+                    {
+                        formattedString = formattedString.Replace("π", Math.PI.ToString());
+                    }
+                    else
+                    {
+                        formattedString = formattedString.Replace("π", "*" + Math.PI.ToString());
+                    }
+                }
 
                 // Handle squared expressions
                 if (formattedString.Contains("²"))
