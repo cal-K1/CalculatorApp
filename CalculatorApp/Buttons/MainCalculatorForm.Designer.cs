@@ -395,10 +395,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1095, 652);
             Controls.Add(gpbCalcMain);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Form1";
             gpbCalcMain.ResumeLayout(false);
             ResumeLayout(false);
