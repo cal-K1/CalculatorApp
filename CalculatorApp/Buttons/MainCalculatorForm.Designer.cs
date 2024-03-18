@@ -79,7 +79,7 @@
             gpbCalcMain.Controls.Add(btnAC);
             gpbCalcMain.Controls.Add(btnCalcOnOff);
             gpbCalcMain.Controls.Add(richTextBoxCalculatorDisplay);
-            gpbCalcMain.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gpbCalcMain.Font = new Font("Verdana", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             gpbCalcMain.ForeColor = SystemColors.ButtonHighlight;
             gpbCalcMain.Location = new Point(12, 12);
             gpbCalcMain.Name = "gpbCalcMain";
@@ -92,7 +92,7 @@
             // 
             btnDelete.BackColor = Color.FromArgb(255, 128, 0);
             btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDelete.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.FloralWhite;
             btnDelete.Location = new Point(407, 513);
             btnDelete.Name = "btnDelete";
@@ -106,7 +106,7 @@
             // 
             btnDecimal.BackColor = Color.DarkCyan;
             btnDecimal.FlatStyle = FlatStyle.Flat;
-            btnDecimal.Font = new Font("Arial", 48F);
+            btnDecimal.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnDecimal.ForeColor = Color.FloralWhite;
             btnDecimal.Location = new Point(31, 513);
             btnDecimal.Name = "btnDecimal";
@@ -121,7 +121,7 @@
             btnEquals.BackColor = Color.Gold;
             btnEquals.DialogResult = DialogResult.OK;
             btnEquals.FlatStyle = FlatStyle.Flat;
-            btnEquals.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEquals.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnEquals.ForeColor = SystemColors.ButtonFace;
             btnEquals.Location = new Point(811, 488);
             btnEquals.Name = "btnEquals";
@@ -135,7 +135,7 @@
             // 
             btnPi.BackColor = Color.CadetBlue;
             btnPi.FlatStyle = FlatStyle.Flat;
-            btnPi.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPi.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnPi.ForeColor = SystemColors.ButtonFace;
             btnPi.Location = new Point(849, 363);
             btnPi.Name = "btnPi";
@@ -149,7 +149,7 @@
             // 
             btnSquared.BackColor = Color.CadetBlue;
             btnSquared.FlatStyle = FlatStyle.Flat;
-            btnSquared.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSquared.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnSquared.ForeColor = SystemColors.ButtonFace;
             btnSquared.Location = new Point(849, 241);
             btnSquared.Name = "btnSquared";
@@ -163,7 +163,7 @@
             // 
             btnDivide.BackColor = Color.SeaGreen;
             btnDivide.FlatStyle = FlatStyle.Flat;
-            btnDivide.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDivide.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point);
             btnDivide.Location = new Point(605, 130);
             btnDivide.Name = "btnDivide";
             btnDivide.Size = new Size(180, 112);
@@ -176,7 +176,7 @@
             // 
             buttonMultiply.BackColor = Color.SeaGreen;
             buttonMultiply.FlatStyle = FlatStyle.Flat;
-            buttonMultiply.Font = new Font("Corbel", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonMultiply.Font = new Font("Corbel", 48F, FontStyle.Bold, GraphicsUnit.Point);
             buttonMultiply.ForeColor = SystemColors.ButtonHighlight;
             buttonMultiply.Location = new Point(605, 254);
             buttonMultiply.Name = "buttonMultiply";
@@ -190,7 +190,7 @@
             // 
             btnMinus.BackColor = Color.SeaGreen;
             btnMinus.FlatStyle = FlatStyle.Flat;
-            btnMinus.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMinus.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point);
             btnMinus.Location = new Point(605, 379);
             btnMinus.Name = "btnMinus";
             btnMinus.Size = new Size(180, 112);
@@ -203,7 +203,7 @@
             // 
             btnAdd.BackColor = Color.SeaGreen;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdd.Font = new Font("Arial", 72F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.Location = new Point(605, 502);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(180, 112);
@@ -216,7 +216,7 @@
             // 
             btnZero.BackColor = Color.DeepSkyBlue;
             btnZero.FlatStyle = FlatStyle.Flat;
-            btnZero.Font = new Font("Arial", 48F);
+            btnZero.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnZero.ForeColor = Color.FloralWhite;
             btnZero.Location = new Point(218, 513);
             btnZero.Name = "btnZero";
@@ -230,7 +230,7 @@
             // 
             btnThree.BackColor = Color.DeepSkyBlue;
             btnThree.FlatStyle = FlatStyle.Flat;
-            btnThree.Font = new Font("Arial", 48F);
+            btnThree.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnThree.ForeColor = Color.FloralWhite;
             btnThree.Location = new Point(407, 390);
             btnThree.Name = "btnThree";
@@ -244,7 +244,7 @@
             // 
             btnTwo.BackColor = Color.DeepSkyBlue;
             btnTwo.FlatStyle = FlatStyle.Flat;
-            btnTwo.Font = new Font("Arial", 48F);
+            btnTwo.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnTwo.ForeColor = Color.FloralWhite;
             btnTwo.Location = new Point(218, 390);
             btnTwo.Name = "btnTwo";
@@ -258,7 +258,7 @@
             // 
             btnOne.BackColor = Color.DeepSkyBlue;
             btnOne.FlatStyle = FlatStyle.Flat;
-            btnOne.Font = new Font("Arial", 48F);
+            btnOne.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnOne.ForeColor = Color.FloralWhite;
             btnOne.Location = new Point(31, 390);
             btnOne.Name = "btnOne";
@@ -272,7 +272,7 @@
             // 
             btnSix.BackColor = Color.DeepSkyBlue;
             btnSix.FlatStyle = FlatStyle.Flat;
-            btnSix.Font = new Font("Arial", 48F);
+            btnSix.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnSix.ForeColor = Color.FloralWhite;
             btnSix.Location = new Point(407, 260);
             btnSix.Name = "btnSix";
@@ -286,7 +286,7 @@
             // 
             btnFive.BackColor = Color.DeepSkyBlue;
             btnFive.FlatStyle = FlatStyle.Flat;
-            btnFive.Font = new Font("Arial", 48F);
+            btnFive.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnFive.ForeColor = Color.FloralWhite;
             btnFive.Location = new Point(218, 265);
             btnFive.Name = "btnFive";
@@ -300,7 +300,7 @@
             // 
             btnFour.BackColor = Color.DeepSkyBlue;
             btnFour.FlatStyle = FlatStyle.Flat;
-            btnFour.Font = new Font("Arial", 48F);
+            btnFour.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnFour.ForeColor = Color.FloralWhite;
             btnFour.Location = new Point(31, 265);
             btnFour.Name = "btnFour";
@@ -314,7 +314,7 @@
             // 
             btnNine.BackColor = Color.DeepSkyBlue;
             btnNine.FlatStyle = FlatStyle.Flat;
-            btnNine.Font = new Font("Arial", 48F);
+            btnNine.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnNine.ForeColor = Color.FloralWhite;
             btnNine.Location = new Point(407, 141);
             btnNine.Name = "btnNine";
@@ -328,7 +328,7 @@
             // 
             btnEight.BackColor = Color.DeepSkyBlue;
             btnEight.FlatStyle = FlatStyle.Flat;
-            btnEight.Font = new Font("Arial", 48F);
+            btnEight.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnEight.ForeColor = Color.FloralWhite;
             btnEight.Location = new Point(218, 141);
             btnEight.Name = "btnEight";
@@ -342,7 +342,7 @@
             // 
             btnSeven.BackColor = Color.DeepSkyBlue;
             btnSeven.FlatStyle = FlatStyle.Flat;
-            btnSeven.Font = new Font("Arial", 48F);
+            btnSeven.Font = new Font("Arial", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnSeven.ForeColor = Color.FloralWhite;
             btnSeven.Location = new Point(31, 141);
             btnSeven.Name = "btnSeven";
@@ -357,7 +357,7 @@
             btnAC.BackColor = Color.FromArgb(255, 128, 0);
             btnAC.BackgroundImageLayout = ImageLayout.Center;
             btnAC.FlatStyle = FlatStyle.Popup;
-            btnAC.Font = new Font("Corbel", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAC.Font = new Font("Corbel", 48F, FontStyle.Regular, GraphicsUnit.Point);
             btnAC.ForeColor = SystemColors.ControlLightLight;
             btnAC.Location = new Point(928, 129);
             btnAC.Name = "btnAC";
@@ -383,9 +383,10 @@
             // 
             // richTextBoxCalculatorDisplay
             // 
-            richTextBoxCalculatorDisplay.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBoxCalculatorDisplay.Font = new Font("Arial", 36F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBoxCalculatorDisplay.Location = new Point(113, 25);
             richTextBoxCalculatorDisplay.Name = "richTextBoxCalculatorDisplay";
+            richTextBoxCalculatorDisplay.ReadOnly = true;
             richTextBoxCalculatorDisplay.Size = new Size(751, 72);
             richTextBoxCalculatorDisplay.TabIndex = 0;
             richTextBoxCalculatorDisplay.Text = "";
