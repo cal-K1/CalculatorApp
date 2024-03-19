@@ -3,7 +3,7 @@ using Xunit;
 
 namespace CalculatorTests
 {
-    public class UnitTest1
+    public class CalculatorHelpersTest
     {
         [Fact]
         public void CalculatorAppHelpers_FormatString_ReturnsString()
