@@ -56,7 +56,6 @@ namespace CalculatorApp.Helpers
             try
             {
                 completeCalculation = new DataTable().Compute(formattedString, null).ToString();
-
             }
             catch
             {

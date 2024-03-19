@@ -19,6 +19,7 @@ namespace CalculatorApp
         private void InitializeNumberButtons()
         {
             WasLastClickEquals();
+
             // Iterate through all controls in the form
             foreach (Control control in Controls)
             {
@@ -181,7 +182,10 @@ namespace CalculatorApp
                         button.Enabled = true;
                     }
                 }
-                else return;
+                else
+                {
+                    return;
+                }
             }
             wasLastClickEquals = false;
         }
@@ -204,7 +208,6 @@ namespace CalculatorApp
             {
                 richTextBoxCalculatorDisplay.Text = string.Empty;
             }
-            else return;
         }
     }
 }
