@@ -137,7 +137,6 @@ namespace CalculatorApp
             {
                 return;
             }
-            
         }
 
         private void btnDivide_Click(object sender, EventArgs e)

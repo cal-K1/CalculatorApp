@@ -30,7 +30,6 @@ namespace CalculatorTests
             Assert.Equal(expectedFormattedStringTwo, formattedStringTwo);
             Assert.Equal(expectedFormattedStringThree, formattedStringThree);
             Assert.Equal(expectedFormattedStringFour, formattedStringFour);
-
         }
 
         [Fact]
@@ -62,7 +61,6 @@ namespace CalculatorTests
             Assert.Equal(expectedCalculatedValueThree, calculatedExpressionThree);
             Assert.Equal(expectedCalculatedValueFour, calculatedExpressionFour);
             Assert.Equal(expectedCalculatedValueFive, calculatedExpressionFive);
-
         }
     }
 }
