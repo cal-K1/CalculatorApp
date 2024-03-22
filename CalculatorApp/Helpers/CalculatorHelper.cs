@@ -35,8 +35,8 @@ namespace CalculatorApp.Helpers
                 if (formattedString.Contains("²"))
                 {
                     // Extract the base number
-                        string baseNumberStr = Regex.Match(formattedString, @"\d+(\.\d+)?").Value;
-                        double baseNumber = double.Parse(baseNumberStr);
+                    string baseNumberStr = Regex.Match(formattedString, @"\d+(\.\d+)?").Value;
+                    double baseNumber = double.Parse(baseNumberStr);
 
                     double result = Math.Pow(baseNumber, 2);
 
